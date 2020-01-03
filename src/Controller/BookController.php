@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
     class BookController extends AbstractController {
 
        /**
-        * @Route("/books.json", name=":index", methods={"GET"})
+        * @Route("/books", name=":index", methods={"GET"})
         */
         public function index(BookRepository $bookRepository): Response
         {
@@ -23,7 +23,7 @@ use Symfony\Component\Routing\Annotation\Route;
         } 
 
         /**
-         * @Route("/books.json", name=":new", methods={"POST"})
+         * @Route("/books", name=":new", methods={"POST"})
          */
         public function new(Request $request): Response
         {
@@ -47,7 +47,7 @@ use Symfony\Component\Routing\Annotation\Route;
         }
 
         /**
-         * @Route("/books/{id}.json", name="show", methods={"GET"})
+         * @Route("/books/{id}", name="show", methods={"GET"})
          */
         public function show(Book $book): Response
         {
@@ -55,7 +55,7 @@ use Symfony\Component\Routing\Annotation\Route;
         }
 
         /**
-         * @Route("/books/{id}.json", name="edit", methods={"PUT"})
+         * @Route("/books/{id}", name="edit", methods={"PUT"})
          */
         public function edit(Request $request, Book $book): Response
         {
@@ -75,7 +75,7 @@ use Symfony\Component\Routing\Annotation\Route;
         }
 
         /**
-         * @Route("/books/{id}.json", name="delete", methods={"DELETE"})
+         * @Route("/books/{id}", name="delete", methods={"DELETE"})
          */
         public function delete(Request $request, Book $book): Response
         {

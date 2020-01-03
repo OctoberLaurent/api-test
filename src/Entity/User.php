@@ -166,7 +166,10 @@ class User implements UserInterface
         return $this->fullname;
     }
 
-    public function setFullname(string $fullname): self
+    /**
+     * @ORM\PrePersist
+    */
+    public function setFullname(): self
     {
         $this->fullname = $this->firstname;
         $this->fullname.= ' ';
